@@ -39,8 +39,8 @@ import com.jfixby.r3.api.RedTriplane;
 import com.jfixby.r3.api.RedTriplaneFlags;
 import com.jfixby.r3.api.RedTriplaneParams;
 import com.jfixby.r3.api.game.GameLogic;
-import com.jfixby.r3.api.game.GameUI;
 import com.jfixby.r3.api.shader.R3Shader;
+import com.jfixby.r3.api.ui.GameUI;
 import com.jfixby.r3.api.ui.UIStarter;
 import com.jfixby.r3.api.ui.unit.layer.LayerUtils;
 import com.jfixby.r3.collide.RedCollisionsAlgebra;
@@ -54,6 +54,7 @@ import com.jfixby.r3.fokker.api.UnitsSpawner;
 import com.jfixby.r3.fokker.api.assets.FokkerAtlasLoader;
 import com.jfixby.r3.fokker.api.assets.FokkerRasterDataRegister;
 import com.jfixby.r3.fokker.api.assets.FokkerTextureLoader;
+import com.jfixby.r3.ui.RedUIManager;
 import com.jfixby.rana.api.asset.AssetsManager;
 import com.jfixby.rana.api.asset.AssetsManagerFlags;
 import com.jfixby.rana.api.pkg.ResourcesManager;
@@ -93,9 +94,8 @@ import com.jfixby.redtriplane.fokker.assets.RedFokkerRasterDataRegister;
 import com.jfixby.redtriplane.fokker.fs.AssetsInfo;
 import com.jfixby.summer.assets.DoorPath;
 import com.jfixby.summer.game.SummerTheGame;
-import com.jfixby.summer.ui.SummerUIManager;
 
-public class TintoSummerAssembler implements FokkerEngineAssembler {
+public class SummerAssembler implements FokkerEngineAssembler {
 
 	@Override
 	public void assembleEngine() {
@@ -169,7 +169,7 @@ public class TintoSummerAssembler implements FokkerEngineAssembler {
 			// TexturePacker.installComponent(new GdxTexturePacker());
 		}
 
-		SummerUIManager tinto_ui_starter = new SummerUIManager();
+		RedUIManager tinto_ui_starter = new RedUIManager();
 		UIStarter.installComponent(tinto_ui_starter);
 		GameUI.installComponent(tinto_ui_starter);
 		GameLogic.installComponent(new SummerTheGame());

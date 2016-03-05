@@ -13,7 +13,7 @@ public class RunSummerDesktop {
 	public static void main(String[] arg) {
 		FokkerStarterConfig config = FokkerStarter.newRedTriplaneConfig();
 
-		FokkerEngineAssembler engine_assembler = new TintoSummerAssembler();
+		FokkerEngineAssembler engine_assembler = new SummerAssembler();
 		config.setEngineAssembler(engine_assembler);
 
 		FokkerStarter triplane_starter = FokkerStarter.newRedTriplane(config);
