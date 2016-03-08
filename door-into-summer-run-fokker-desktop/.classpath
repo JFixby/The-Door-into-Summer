@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/door-into-summer-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/door-into-summer-game"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/door-into-summer-run-fokker"/>
@@ -22,11 +21,12 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-shader-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-fokker-core"/>
-	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/gdx-1.9.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/door-into-summer-assets-cfg"/>
+	<classpathentry kind="lib" path="/libs/gdx/1.9.1/core/gdx-1.9.1.jar" sourcepath="/libs/gdx/1.9.1/core/src/gdx-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="/libs/gdx/1.9.1/core/gdx-box2d-1.9.1.jar"/>
+	<classpathentry kind="lib" path="/libs/gdx/1.9.1/core/gdx-freetype-1.9.1.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/gdx-backend-lwjgl-1.9.1.jar"/>
-	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/gdx-box2d-1.9.1.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/gdx-box2d-platform-1.9.1-natives-desktop.jar"/>
-	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/gdx-freetype-1.9.1.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/gdx-freetype-platform-1.9.1-natives-desktop.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/gdx-platform-1.9.1-natives-desktop.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/jinput-2.0.5.jar"/>
@@ -41,6 +41,6 @@
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/lwjgl-platform-2.9.2-natives-linux.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/lwjgl-platform-2.9.2-natives-osx.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/lwjgl-platform-2.9.2-natives-windows.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/door-into-summer-assets-cfg"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
