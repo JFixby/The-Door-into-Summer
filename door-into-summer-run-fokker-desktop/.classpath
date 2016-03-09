@@ -22,7 +22,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-fokker-core"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/door-into-summer-assets-cfg"/>
-	<classpathentry kind="lib" path="/libs/gdx/1.9.1/core/gdx-1.9.1.jar" sourcepath="/libs/gdx/1.9.1/core/src/gdx-1.9.1-sources.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/core/gdx-box2d-1.9.1.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/core/gdx-freetype-1.9.1.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/gdx-backend-lwjgl-1.9.1.jar"/>
@@ -42,5 +41,6 @@
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/lwjgl-platform-2.9.2-natives-osx.jar"/>
 	<classpathentry kind="lib" path="/libs/gdx/1.9.1/desktop/lwjgl-platform-2.9.2-natives-windows.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/libs/gdx/1.9.1/core/gdx-1.9.1.jar" sourcepath="/libs/gdx/1.9.1/core/src/gdx-1.9.1-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
