@@ -97,168 +97,169 @@ import com.jfixby.summer.game.SummerTheGame;
 
 public class SummerAssembler implements FokkerEngineAssembler {
 
-	@Override
-	public void assembleEngine() {
-		L.installComponent(new DesktopLogger());
+    @Override
+    public void assembleEngine() {
+	L.installComponent(new DesktopLogger());
 
-		Err.installComponent(new RedError());
-		Debug.installComponent(new RedDebug());
-		Collections.installComponent(new DesktopCollections());
+	Err.installComponent(new RedError());
+	Debug.installComponent(new RedDebug());
+	Collections.installComponent(new DesktopCollections());
 
-		JUtils.installComponent(new RedJUtils());
-		FloatMath.installComponent(new DesktopFloatMath());
-		Sys.installComponent(new DesktopSystem());
+	JUtils.installComponent(new RedJUtils());
+	FloatMath.installComponent(new DesktopFloatMath());
+	Sys.installComponent(new DesktopSystem());
 
-		IntegerMath.installComponent(new RedIntegerMath());
-		Names.installComponent(new RedAssetsNamespace());
-		IO.installComponent(new RedIO());
-		Graphs.installComponent(new RedGraphs());
-		SimpleTriangulator.installComponent(new GdxSimpleTriangulator());
-		Angles.installComponent(new RedAngles());
+	IntegerMath.installComponent(new RedIntegerMath());
+	Names.installComponent(new RedAssetsNamespace());
+	IO.installComponent(new RedIO());
+	Graphs.installComponent(new RedGraphs());
+	SimpleTriangulator.installComponent(new GdxSimpleTriangulator());
+	Angles.installComponent(new RedAngles());
 
-		UserInput.installComponent(new RedInput());
+	UserInput.installComponent(new RedInput());
 
-		RedGeometry geometry = new RedGeometry();
-		Geometry.installComponent(geometry);
-		Colors.installComponent(new RedColors());
-		MathTools.installComponent(new RedMathTools());
-		// --
-		UnitsSpawner.installComponent(new DesktopUnitsSpawner());
-		Json.installComponent(new GdxJson());
-		Base64.installComponent(new GdxBase64());
-		MD5.installComponent(new AlpaeroMD5());
+	RedGeometry geometry = new RedGeometry();
+	Geometry.installComponent(geometry);
+	Colors.installComponent(new RedColors());
+	MathTools.installComponent(new RedMathTools());
+	// --
+	UnitsSpawner.installComponent(new DesktopUnitsSpawner());
+	Json.installComponent(new GdxJson());
+	Base64.installComponent(new GdxBase64());
+	MD5.installComponent(new AlpaeroMD5());
 
-		LocalFileSystem.installComponent(new WinFileSystem());
+	LocalFileSystem.installComponent(new WinFileSystem());
 
-		installResources();
+	installResources();
 
-		Scene2D.installComponent(new RedScene2D());
-		R3Font.installComponent(new GdxR3Font());
-		R3Text.installComponent(new RedTriplaneText());
-		R3Shader.installComponent(new R3FokkerShader());
+	Scene2D.installComponent(new RedScene2D());
+	R3Font.installComponent(new GdxR3Font());
+	R3Text.installComponent(new RedTriplaneText());
+	R3Shader.installComponent(new R3FokkerShader());
 
-		// FileSystemPacker.installComponent(new RedFileSystemPacker());
+	// FileSystemPacker.installComponent(new RedFileSystemPacker());
 
-		FileSystemSandBox.installComponent(new RedFileSystemSandBox());
+	FileSystemSandBox.installComponent(new RedFileSystemSandBox());
 
-		// String java_path_cache = "D:\\[DATA]\\[RED-ASSETS]\\cache";
-		// File cache_path = LocalFileSystem.newFile(java_path_cache);
+	// String java_path_cache = "D:\\[DATA]\\[RED-ASSETS]\\cache";
+	// File cache_path = LocalFileSystem.newFile(java_path_cache);
 
-		// VirtualFileSystem vfs = new VirtualFileSystem();
-		// cache_path = vfs;
-		LayerUtils.installComponent(new RedLayerUtils());
-		FileCache.installComponent(new RedFileCache());
-		FokkerRasterDataRegister.installComponent(new RedFokkerRasterDataRegister());
+	// VirtualFileSystem vfs = new VirtualFileSystem();
+	// cache_path = vfs;
+	LayerUtils.installComponent(new RedLayerUtils());
+	FileCache.installComponent(new RedFileCache());
+	FokkerRasterDataRegister.installComponent(new RedFokkerRasterDataRegister());
 
-		FokkerAtlasLoader.installComponent(new GdxAtlasReader());
-		FokkerTextureLoader.installComponent(new GdxTextureReader());
-		AssetsManager.installComponent(new RedAssetsManager());
-		FokkerAtlasLoader.register();
-		FokkerTextureLoader.register();
+	FokkerAtlasLoader.installComponent(new GdxAtlasReader());
+	FokkerTextureLoader.installComponent(new GdxTextureReader());
+	AssetsManager.installComponent(new RedAssetsManager());
+	FokkerAtlasLoader.register();
+	FokkerTextureLoader.register();
 
-		ResourcesManager.registerPackageReader(Scene2D.getPackageReader());
-		ResourcesManager.registerPackageReader(R3Font.getPackageReader());
-		ResourcesManager.registerPackageReader(R3Text.getPackageReader());
-		ResourcesManager.registerPackageReader(R3Shader.getPackageReader());
+	ResourcesManager.registerPackageReader(Scene2D.getPackageReader());
+	ResourcesManager.registerPackageReader(R3Font.getPackageReader());
+	ResourcesManager.registerPackageReader(R3Text.getPackageReader());
+	ResourcesManager.registerPackageReader(R3Shader.getPackageReader());
 
-		// --
-		{
-			// PSDUnpacker.installComponent(new RedPSDUnpacker());
-			// SpriteDecomposer.installComponent(new RedSpriteDecomposer());
-			// ImageProcessing.installComponent(new FokkerImageProcessing());
-			// TexturePacker.installComponent(new GdxTexturePacker());
-		}
-
-		RedUIManager tinto_ui_starter = new RedUIManager();
-		UIStarter.installComponent(tinto_ui_starter);
-		GameUI.installComponent(tinto_ui_starter);
-		GameLogic.installComponent(new SummerTheGame());
-
-		// JBox2D box2d_j = new JBox2D(); //
-		// JBox2DFloat box2d_j_float = new JBox2DFloat();
-		// GDXBox2D box2d_gdx = new GDXBox2D();
-
-		// Box2DComponent box2d = box2d_j;
-		// Box2DComponent box2d = box2d_j_float;
-
-		// Physics2DComponent r3_physics_gdx = new
-		// RedTriplanePhysics(box2d_gdx);
-		// Physics2DComponent r3_physics_jfloat = new RedTriplanePhysics(
-		// box2d_j_float);
-		// Physics2DComponent r3_physics_j = new RedTriplanePhysics(box2d_j);
-
-		// RedTriplanePhysics r3_physics = r3_physics_gdx;
-		// RedTriplanePhysics r3_physics = r3_physics_jfloat;
-
-		// Physics2DComponent r3_physics = new RedTriplanePhysicsDuplex(
-		// r3_physics_j, r3_physics_jfloat);
-
-		// Physics2D.installComponent(r3_physics_j);
-
-		// Box2D.installComponent(box2d);
-		Collisions.installComponent(new RedCollisionsAlgebra());
-
-		RedTriplane.installComponent(new Fokker());
-
-		Sys.setExecutionMode(ExecutionMode.EARLY_DEVELOPMENT);
-		Sys.setFlag(RedTriplaneFlags.PrintLogMessageOnMissingSprite, true);
-		Sys.setFlag(RedTriplaneFlags.ExitOnMissingSprite, false);
-		Sys.setFlag(RedTriplaneFlags.AllowMissingRaster, true);
-		Sys.setFlag(AssetsManager.UseAssetSandBox, false);
-		Sys.setFlag(AssetsManagerFlags.AutoresolveDependencies, true);
-		Sys.setStringParameter(RedTriplaneParams.DefaultFont, "Arial");
-		Sys.setStringParameter(GCFisher.DefaultBaitSize, "50Mb");
-
-		// /-----------------------------------------
-
-		// ImageProcessing.installComponent(new DesktopImageProcessing());
-		// ImageGWT.installComponent(new RedImageGWT());
-		// JsonTest.test();
-		GCFisher.installComponent(new RedGCFisher());
-		BaitInfo bait_info = GCFisher.throwBait();
-		L.d("throw GC bait", bait_info);
+	// --
+	{
+	    // PSDUnpacker.installComponent(new RedPSDUnpacker());
+	    // SpriteDecomposer.installComponent(new RedSpriteDecomposer());
+	    // ImageProcessing.installComponent(new FokkerImageProcessing());
+	    // TexturePacker.installComponent(new GdxTexturePacker());
 	}
 
-	private void installResources() {
-		printAssetsInfo();
+	RedUIManager tinto_ui_starter = new RedUIManager();
+	UIStarter.installComponent(tinto_ui_starter);
+	GameUI.installComponent(tinto_ui_starter);
+	GameLogic.installComponent(new SummerTheGame());
 
-		RedResourcesManager res_manager = new RedResourcesManager();
-		ResourcesManager.installComponent(res_manager);
+	// JBox2D box2d_j = new JBox2D(); //
+	// JBox2DFloat box2d_j_float = new JBox2DFloat();
+	// GDXBox2D box2d_gdx = new GDXBox2D();
 
-		File dev_assets_home = LocalFileSystem.newFile(DoorPath.PACKED_ASSETS_HOME);
+	// Box2DComponent box2d = box2d_j;
+	// Box2DComponent box2d = box2d_j_float;
 
-		// dev_assets_home = preload(dev_assets_home);
+	// Physics2DComponent r3_physics_gdx = new
+	// RedTriplanePhysics(box2d_gdx);
+	// Physics2DComponent r3_physics_jfloat = new RedTriplanePhysics(
+	// box2d_j_float);
+	// Physics2DComponent r3_physics_j = new RedTriplanePhysics(box2d_j);
 
-		{
-			File bank_folder = dev_assets_home.child("bank-summer");
-			if (bank_folder.exists()) {
-				FileSystemBasedResource resource = new FileSystemBasedResource(bank_folder);
-				res_manager.installResource(resource);
-			}
-		}
+	// RedTriplanePhysics r3_physics = r3_physics_gdx;
+	// RedTriplanePhysics r3_physics = r3_physics_jfloat;
 
+	// Physics2DComponent r3_physics = new RedTriplanePhysicsDuplex(
+	// r3_physics_j, r3_physics_jfloat);
+
+	// Physics2D.installComponent(r3_physics_j);
+
+	// Box2D.installComponent(box2d);
+	Collisions.installComponent(new RedCollisionsAlgebra());
+
+	RedTriplane.installComponent(new Fokker());
+
+	Sys.setExecutionMode(ExecutionMode.EARLY_DEVELOPMENT);
+	Sys.setFlag(RedTriplaneFlags.PrintLogMessageOnMissingSprite, true);
+	Sys.setFlag(RedTriplaneFlags.ExitOnMissingSprite, false);
+	Sys.setFlag(RedTriplaneFlags.AllowMissingRaster, true);
+	Sys.setFlag(AssetsManager.UseAssetSandBox, false);
+	Sys.setFlag(AssetsManagerFlags.AutoresolveDependencies, true);
+	Sys.setStringParameter(RedTriplaneParams.DefaultFont, "Arial");
+	Sys.setStringParameter(RedTriplaneParams.CLEAR_SCREEN_COLOR_ARGB, "#FF440044");
+	Sys.setStringParameter(GCFisher.DefaultBaitSize, "50Mb");
+
+	// /-----------------------------------------
+
+	// ImageProcessing.installComponent(new DesktopImageProcessing());
+	// ImageGWT.installComponent(new RedImageGWT());
+	// JsonTest.test();
+	GCFisher.installComponent(new RedGCFisher());
+	BaitInfo bait_info = GCFisher.throwBait();
+	L.d("throw GC bait", bait_info);
+    }
+
+    private void installResources() {
+	printAssetsInfo();
+
+	RedResourcesManager res_manager = new RedResourcesManager();
+	ResourcesManager.installComponent(res_manager);
+
+	File dev_assets_home = LocalFileSystem.newFile(DoorPath.PACKED_ASSETS_HOME);
+
+	// dev_assets_home = preload(dev_assets_home);
+
+	{
+	    File bank_folder = dev_assets_home.child("bank-summer");
+	    if (bank_folder.exists()) {
+		FileSystemBasedResource resource = new FileSystemBasedResource(bank_folder);
+		res_manager.installResource(resource);
+	    }
 	}
 
-	private File preload(File dev_assets_home) {
-		VirtualFileSystem virtualFS = new VirtualFileSystem();
-		try {
-			virtualFS.copyFolderContentsToFolder(dev_assets_home, virtualFS.ROOT());
-			dev_assets_home = virtualFS.ROOT();
-		} catch (IOException e) {
-			e.printStackTrace();
-			Sys.exit();
-		}
-		return dev_assets_home;
-	}
+    }
 
-	private void printAssetsInfo() {
-		FileHandle fh = Gdx.files.internal(AssetsInfo.FILE_NAME);
-		if (!fh.exists()) {
-			return;
-		}
-		String data = fh.readString();
-		AssetsInfo info = Json.deserializeFromString(AssetsInfo.class, data);
-		info.print();
+    private File preload(File dev_assets_home) {
+	VirtualFileSystem virtualFS = new VirtualFileSystem();
+	try {
+	    virtualFS.copyFolderContentsToFolder(dev_assets_home, virtualFS.ROOT());
+	    dev_assets_home = virtualFS.ROOT();
+	} catch (IOException e) {
+	    e.printStackTrace();
+	    Sys.exit();
 	}
+	return dev_assets_home;
+    }
+
+    private void printAssetsInfo() {
+	FileHandle fh = Gdx.files.internal(AssetsInfo.FILE_NAME);
+	if (!fh.exists()) {
+	    return;
+	}
+	String data = fh.readString();
+	AssetsInfo info = Json.deserializeFromString(AssetsInfo.class, data);
+	info.print();
+    }
 
 }
