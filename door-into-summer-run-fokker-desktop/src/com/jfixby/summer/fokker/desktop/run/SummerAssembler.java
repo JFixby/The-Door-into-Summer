@@ -32,8 +32,10 @@ import com.jfixby.cmns.api.math.IntegerMath;
 import com.jfixby.cmns.api.math.MathTools;
 import com.jfixby.cmns.api.math.SimpleTriangulator;
 import com.jfixby.cmns.api.md5.MD5;
-import com.jfixby.cmns.api.sys.ExecutionMode;
 import com.jfixby.cmns.api.sys.Sys;
+import com.jfixby.cmns.api.sys.settings.ExecutionMode;
+import com.jfixby.cmns.api.sys.settings.SystemSettings;
+import com.jfixby.cmns.api.taskman.TaskManager;
 import com.jfixby.cmns.api.util.JUtils;
 import com.jfixby.r3.api.RedTriplane;
 import com.jfixby.r3.api.RedTriplaneFlags;
@@ -83,6 +85,8 @@ import com.jfixby.red.math.RedAngles;
 import com.jfixby.red.math.RedIntegerMath;
 import com.jfixby.red.math.RedMathTools;
 import com.jfixby.red.name.RedAssetsNamespace;
+import com.jfixby.red.sys.RedSystemSettings;
+import com.jfixby.red.sys.RedTaskManager;
 import com.jfixby.red.triplane.fokker.desktop.DesktopUnitsSpawner;
 import com.jfixby.red.triplane.resources.fsbased.FileSystemBasedResource;
 import com.jfixby.red.triplane.resources.fsbased.RedResourcesManager;
@@ -107,7 +111,9 @@ public class SummerAssembler implements FokkerEngineAssembler {
 
 	JUtils.installComponent(new RedJUtils());
 	FloatMath.installComponent(new DesktopFloatMath());
+	TaskManager.installComponent(new RedTaskManager());
 	Sys.installComponent(new DesktopSystem());
+	SystemSettings.installComponent(new RedSystemSettings());
 
 	IntegerMath.installComponent(new RedIntegerMath());
 	Names.installComponent(new RedAssetsNamespace());
@@ -200,15 +206,15 @@ public class SummerAssembler implements FokkerEngineAssembler {
 
 	RedTriplane.installComponent(new Fokker());
 
-	Sys.setExecutionMode(ExecutionMode.EARLY_DEVELOPMENT);
-	Sys.setFlag(RedTriplaneFlags.PrintLogMessageOnMissingSprite, true);
-	Sys.setFlag(RedTriplaneFlags.ExitOnMissingSprite, false);
-	Sys.setFlag(RedTriplaneFlags.AllowMissingRaster, true);
-	Sys.setFlag(AssetsManager.UseAssetSandBox, false);
-	Sys.setFlag(AssetsManagerFlags.AutoresolveDependencies, true);
-	Sys.setStringParameter(RedTriplaneParams.DefaultFont, "Arial");
-	Sys.setStringParameter(RedTriplaneParams.CLEAR_SCREEN_COLOR_ARGB, "#FF440044");
-	Sys.setStringParameter(GCFisher.DefaultBaitSize, "50Mb");
+	SystemSettings.setExecutionMode(ExecutionMode.EARLY_DEVELOPMENT);
+	SystemSettings.setFlag(RedTriplaneFlags.PrintLogMessageOnMissingSprite, true);
+	SystemSettings.setFlag(RedTriplaneFlags.ExitOnMissingSprite, false);
+	SystemSettings.setFlag(RedTriplaneFlags.AllowMissingRaster, true);
+	SystemSettings.setFlag(AssetsManager.UseAssetSandBox, false);
+	SystemSettings.setFlag(AssetsManagerFlags.AutoresolveDependencies, true);
+	SystemSettings.setStringParameter(RedTriplaneParams.DefaultFont, "Arial");
+	SystemSettings.setStringParameter(RedTriplaneParams.CLEAR_SCREEN_COLOR_ARGB, "#FF440044");
+	SystemSettings.setStringParameter(GCFisher.DefaultBaitSize, "50Mb");
 
 	// /-----------------------------------------
 
