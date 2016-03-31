@@ -214,7 +214,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 	SystemSettings.setFlag(AssetsManagerFlags.AutoresolveDependencies, true);
 	SystemSettings.setStringParameter(RedTriplaneParams.DefaultFont, "Arial");
 	SystemSettings.setStringParameter(RedTriplaneParams.CLEAR_SCREEN_COLOR_ARGB, "#FF440044");
-	SystemSettings.setStringParameter(GCFisher.DefaultBaitSize, "50Mb");
+	SystemSettings.setLongParameter(GCFisher.DefaultBaitSize, 50 * 1024 * 1024);
 
 	// /-----------------------------------------
 
