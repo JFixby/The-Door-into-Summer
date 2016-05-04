@@ -6,7 +6,7 @@ import com.jfixby.cmns.api.sys.settings.SystemSettings;
 import com.jfixby.r3.api.RedTriplaneParams;
 import com.jfixby.r3.api.game.GameLogicComponent;
 import com.jfixby.r3.api.game.LoadTask;
-import com.jfixby.r3.api.ui.GameUI;
+import com.jfixby.r3.api.ui.UI;
 import com.jfixby.r3.api.ui.UILoaderListener;
 
 public class SummerTheGame implements GameLogicComponent {
@@ -21,21 +21,21 @@ public class SummerTheGame implements GameLogicComponent {
 
 	final long logoFadeTime = SystemSettings.getLongParameter(RedTriplaneParams.DEFAULT_LOGO_FADE_TIME);
 
-	GameUI.showLoadingScreen(loader_ui_unit_id, false);
-	LoadTask task = GameUI.prepareLoadGameUITask(game_ui_unit_id);
+	UI.showLoadingScreen(loader_ui_unit_id, false);
+	LoadTask task = UI.prepareLoadGameUITask(game_ui_unit_id);
 	UILoaderListener ui_loader_listener = new UILoaderListener() {
 
 	    @Override
 	    public void onUILoaderDone() {
-		GameUI.pushFadeOut(logoFadeTime);
+		UI.pushFadeOut(logoFadeTime);
 
-		GameUI.switchToGameUI(game_ui_unit_id);
-		GameUI.pushFadeIn(logoFadeTime);
-		GameUI.allowUserInput();
+		UI.loadUnit(game_ui_unit_id);
+		UI.pushFadeIn(logoFadeTime);
+		UI.allowUserInput();
 	    }
 
 	};
-	GameUI.pushTaskToLoader(task, ui_loader_listener);
+	UI.pushTaskToLoader(task, ui_loader_listener);
 
     }
 
