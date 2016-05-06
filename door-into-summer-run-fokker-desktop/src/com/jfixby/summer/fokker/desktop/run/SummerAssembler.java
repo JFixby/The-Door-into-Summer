@@ -56,6 +56,7 @@ import com.jfixby.r3.fokker.api.UnitsSpawner;
 import com.jfixby.r3.fokker.api.assets.FokkerAtlasLoader;
 import com.jfixby.r3.fokker.api.assets.FokkerRasterDataRegister;
 import com.jfixby.r3.fokker.api.assets.FokkerTextureLoader;
+import com.jfixby.r3.fokker.backend.RedUnitSpawner;
 import com.jfixby.r3.ui.RedUIManager;
 import com.jfixby.rana.api.asset.AssetsManager;
 import com.jfixby.rana.api.asset.AssetsManagerFlags;
@@ -87,7 +88,6 @@ import com.jfixby.red.math.RedMathTools;
 import com.jfixby.red.name.RedAssetsNamespace;
 import com.jfixby.red.sys.RedSystemSettings;
 import com.jfixby.red.sys.RedTaskManager;
-import com.jfixby.red.triplane.fokker.desktop.DesktopUnitsSpawner;
 import com.jfixby.red.triplane.resources.fsbased.FileSystemBasedResource;
 import com.jfixby.red.triplane.resources.fsbased.RedResourcesManager;
 import com.jfixby.red.util.RedJUtils;
@@ -129,7 +129,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 		Colors.installComponent(new RedColors());
 		MathTools.installComponent(new RedMathTools());
 		// --
-		UnitsSpawner.installComponent(new DesktopUnitsSpawner());
+		UnitsSpawner.installComponent(new RedUnitSpawner());
 		Json.installComponent(new RedJson());
 		Base64.installComponent(new GdxBase64());
 		MD5.installComponent(new AlpaeroMD5());
