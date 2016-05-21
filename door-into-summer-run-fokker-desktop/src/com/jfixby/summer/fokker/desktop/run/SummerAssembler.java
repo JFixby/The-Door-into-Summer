@@ -76,7 +76,7 @@ import com.jfixby.red.engine.scene2d.RedScene2D;
 import com.jfixby.red.err.RedError;
 import com.jfixby.red.filesystem.cache.RedFileCache;
 import com.jfixby.red.filesystem.sandbox.RedFileSystemSandBox;
-import com.jfixby.red.filesystem.virtual.VirtualFileSystem;
+import com.jfixby.red.filesystem.virtual.InMemoryFileSystem;
 import com.jfixby.red.geometry.RedGeometry;
 import com.jfixby.red.graphs.RedGraphs;
 import com.jfixby.red.input.RedInput;
@@ -247,7 +247,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 	}
 
 	private File preload (File dev_assets_home) {
-		final VirtualFileSystem virtualFS = new VirtualFileSystem();
+		final InMemoryFileSystem virtualFS = new InMemoryFileSystem();
 		try {
 			virtualFS.copyFolderContentsToFolder(dev_assets_home, virtualFS.ROOT());
 			dev_assets_home = virtualFS.ROOT();
