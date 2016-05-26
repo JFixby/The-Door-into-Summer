@@ -211,6 +211,8 @@ public class SummerAssembler implements FokkerEngineAssembler {
 		SystemSettings.setFlag(RedTriplaneParams.ExitOnMissingSprite, false);
 		SystemSettings.setFlag(RedTriplaneParams.AllowMissingRaster, true);
 		SystemSettings.setFlag(AssetsManager.UseAssetSandBox, false);
+
+		SystemSettings.setFlag(AssetsManager.ReportUnusedAssets, false);
 		SystemSettings.setFlag(AssetsManagerFlags.AutoresolveDependencies, true);
 		SystemSettings.setStringParameter(RedTriplaneParams.DefaultFont, "Arial");
 		SystemSettings.setStringParameter(RedTriplaneParams.CLEAR_SCREEN_COLOR_ARGB, "#FF440044");
