@@ -91,7 +91,7 @@ import com.jfixby.red.sys.RedTaskManager;
 import com.jfixby.red.triplane.resources.fsbased.FileSystemBasedResource;
 import com.jfixby.red.triplane.resources.fsbased.RedResourcesManager;
 import com.jfixby.red.util.RedJUtils;
-import com.jfixby.red.util.md5.AlpaeroMD5;
+import com.jfixby.red.util.md5.RSADataSecurityIncMD5;
 import com.jfixby.redtriplane.fokker.assets.GdxAtlasReader;
 import com.jfixby.redtriplane.fokker.assets.GdxTextureReader;
 import com.jfixby.redtriplane.fokker.assets.RedFokkerRasterDataRegister;
@@ -132,7 +132,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 		UnitsSpawner.installComponent(new RedUnitSpawner());
 		Json.installComponent(new RedJson());
 		Base64.installComponent(new GdxBase64());
-		MD5.installComponent(new AlpaeroMD5());
+		MD5.installComponent(new RSADataSecurityIncMD5());
 
 		LocalFileSystem.installComponent(new WinFileSystem());
 
