@@ -24,7 +24,6 @@ import com.jfixby.cmns.api.geometry.Geometry;
 import com.jfixby.cmns.api.graphs.Graphs;
 import com.jfixby.cmns.api.input.UserInput;
 import com.jfixby.cmns.api.io.IO;
-import com.jfixby.cmns.api.java.gc.BaitInfo;
 import com.jfixby.cmns.api.java.gc.GCFisher;
 import com.jfixby.cmns.api.json.Json;
 import com.jfixby.cmns.api.log.L;
@@ -224,8 +223,8 @@ public class SummerAssembler implements FokkerEngineAssembler {
 		// ImageGWT.installComponent(new RedImageGWT());
 		// JsonTest.test();
 		GCFisher.installComponent(new RedGCFisher());
-		final BaitInfo bait_info = GCFisher.throwBait();
-		L.d("throw GC bait", bait_info);
+// final BaitInfo bait_info = GCFisher.throwBait();
+// L.d("throw GC bait", bait_info);
 	}
 
 	private void installResources () {
