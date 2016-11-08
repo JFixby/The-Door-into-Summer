@@ -131,7 +131,11 @@ public class SummerAssembler implements FokkerEngineAssembler {
 
 		LocalFileSystem.installComponent(new WinFileSystem());
 
-		this.installResources();
+		try {
+			this.installResources();
+		} catch (final IOException e) {
+			e.printStackTrace();
+		}
 
 		Scene2D.installComponent(new RedScene2D());
 		R3Font.installComponent(new GdxR3Font());
@@ -220,7 +224,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 // L.d("throw GC bait", bait_info);
 	}
 
-	private void installResources () {
+	private void installResources () throws IOException {
 		this.printAssetsInfo();
 
 		final RedResourcesManager res_manager = new RedResourcesManager();
