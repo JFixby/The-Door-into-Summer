@@ -85,7 +85,6 @@ import com.jfixby.red.math.RedMathTools;
 import com.jfixby.red.name.RedAssetsNamespace;
 import com.jfixby.red.sys.RedSystemSettings;
 import com.jfixby.red.sys.RedTaskManager;
-import com.jfixby.red.triplane.resources.fsbased.FileSystemBasedResource;
 import com.jfixby.red.triplane.resources.fsbased.RedResourcesManager;
 import com.jfixby.red.util.RedJUtils;
 import com.jfixby.red.util.md5.RSADataSecurityIncMD5;
@@ -236,10 +235,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 
 		{
 			final File bank_folder = dev_assets_home.child("bank-summer");
-			if (bank_folder.exists()) {
-				final FileSystemBasedResource resource = new FileSystemBasedResource(bank_folder);
-				res_manager.installResource(resource);
-			}
+			res_manager.findAndInstallResources(bank_folder);
 		}
 
 	}
