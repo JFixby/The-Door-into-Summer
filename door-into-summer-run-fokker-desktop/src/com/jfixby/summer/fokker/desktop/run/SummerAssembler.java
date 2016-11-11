@@ -48,10 +48,8 @@ import com.jfixby.r3.collide.RedCollisionsAlgebra;
 import com.jfixby.r3.engine.core.Fokker;
 import com.jfixby.r3.engine.core.unit.layers.RedLayerUtils;
 import com.jfixby.r3.engine.core.unit.shader.R3FokkerShader;
-import com.jfixby.r3.ext.api.font.R3Font;
 import com.jfixby.r3.ext.api.scene2d.Scene2D;
 import com.jfixby.r3.ext.api.text.R3Text;
-import com.jfixby.r3.ext.font.gdx.ft.GdxR3Font;
 import com.jfixby.r3.ext.text.red.RedTriplaneText;
 import com.jfixby.r3.fokker.api.FokkerEngineAssembler;
 import com.jfixby.r3.fokker.api.UnitsSpawner;
@@ -137,7 +135,6 @@ public class SummerAssembler implements FokkerEngineAssembler {
 		}
 
 		Scene2D.installComponent(new RedScene2D());
-		R3Font.installComponent(new GdxR3Font());
 		R3Text.installComponent(new RedTriplaneText());
 		R3Shader.installComponent(new R3FokkerShader());
 
@@ -158,7 +155,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 		AssetsManager.installComponent(new RedAssetsManager());
 
 		ResourcesManager.registerPackageReader(Scene2D.getPackageReader());
-		ResourcesManager.registerPackageReader(R3Font.getPackageReader());
+		ResourcesManager.registerPackageReader(R3Text.getTTFFontPackageReader());
 		ResourcesManager.registerPackageReader(R3Text.getStringsPackageReader());
 		ResourcesManager.registerPackageReader(R3Shader.getPackageReader());
 
