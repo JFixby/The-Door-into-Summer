@@ -3,11 +3,11 @@ package com.jfixby.summer.fokker.desktop.run;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.lwjgl.FokkerLwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.FokkerLwjglApplicationConfiguration;
+import com.jfixby.r3.engine.core.FokkerStarter;
+import com.jfixby.r3.engine.core.FokkerStarterConfig;
+import com.jfixby.r3.fokker.adaptor.GdxAdaptor;
 import com.jfixby.r3.fokker.api.FokkerEngineAssembler;
 import com.jfixby.r3.fokker.api.UnitsMachineExecutor;
-import com.jfixby.red.engine.core.FokkerStarter;
-import com.jfixby.red.engine.core.FokkerStarterConfig;
-import com.jfixby.redtriplane.fokker.adaptor.GdxAdaptor;
 
 public class RunSummerDesktop {
 	public static void main(String[] arg) {
