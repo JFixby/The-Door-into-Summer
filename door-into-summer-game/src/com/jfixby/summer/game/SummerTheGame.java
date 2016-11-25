@@ -1,7 +1,7 @@
 
 package com.jfixby.summer.game;
 
-import com.jfixby.cmns.api.assets.AssetID;
+import com.jfixby.cmns.api.assets.ID;
 import com.jfixby.cmns.api.assets.Names;
 import com.jfixby.cmns.api.sys.settings.SystemSettings;
 import com.jfixby.r3.api.EngineParams.Assets;
@@ -14,8 +14,8 @@ public class SummerTheGame implements BusinessLogicComponent {
 
 	// private long fade_time = 1500;
 
-	public static final AssetID game_ui_unit_id = Names.newAssetID("com.jfixby.tinto.ui.game.GameMainUI");
-	public static final AssetID loader_ui_unit_id = Names.newAssetID("com.jfixby.tinto.ui.game.GameMainUI");
+	public static final ID game_ui_unit_id = Names.newAssetID("com.jfixby.tinto.ui.game.GameMainUI");
+	public static final ID loader_ui_unit_id = Names.newAssetID("com.jfixby.tinto.ui.game.GameMainUI");
 
 	@Override
 	public void start () {

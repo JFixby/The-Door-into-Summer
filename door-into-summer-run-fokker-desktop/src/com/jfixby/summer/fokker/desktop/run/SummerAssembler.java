@@ -66,7 +66,6 @@ import com.jfixby.red.color.RedColors;
 import com.jfixby.red.debug.RedDebug;
 import com.jfixby.red.desktop.collections.DesktopCollections;
 import com.jfixby.red.desktop.filesystem.win.WinFileSystem;
-import com.jfixby.red.desktop.log.DesktopLogger;
 import com.jfixby.red.desktop.math.DesktopFloatMath;
 import com.jfixby.red.desktop.sys.DesktopSystem;
 import com.jfixby.red.engine.core.resources.RedAssetsManager;
@@ -80,6 +79,7 @@ import com.jfixby.red.graphs.RedGraphs;
 import com.jfixby.red.input.RedInput;
 import com.jfixby.red.io.RedIO;
 import com.jfixby.red.java.gc.RedGCFisher;
+import com.jfixby.red.log.SimpleLogger;
 import com.jfixby.red.math.RedAngles;
 import com.jfixby.red.math.RedIntegerMath;
 import com.jfixby.red.math.RedMathTools;
@@ -96,7 +96,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 
 	@Override
 	public void assembleEngine () {
-		L.installComponent(new DesktopLogger());
+		L.installComponent(new SimpleLogger());
 
 		Err.installComponent(new RedError());
 		Debug.installComponent(new RedDebug());
