@@ -14,8 +14,8 @@ public class SummerTheGame implements BusinessLogicComponent {
 
 	// private long fade_time = 1500;
 
-	public static final ID game_ui_unit_id = Names.newAssetID("com.jfixby.tinto.ui.game.GameMainUI");
-	public static final ID loader_ui_unit_id = Names.newAssetID("com.jfixby.tinto.ui.game.GameMainUI");
+	public static final ID game_ui_unit_id = Names.newID("com.jfixby.tinto.ui.game.GameMainUI");
+	public static final ID loader_ui_unit_id = Names.newID("com.jfixby.tinto.ui.game.GameMainUI");
 
 	@Override
 	public void start () {
