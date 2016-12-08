@@ -7,7 +7,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.jfixby.cmns.adopted.gdx.GdxSimpleTriangulator;
 import com.jfixby.cmns.adopted.gdx.base64.GdxBase64;
-import com.jfixby.cmns.adopted.gdx.json.RedJson;
 import com.jfixby.cmns.api.angles.Angles;
 import com.jfixby.cmns.api.assets.Names;
 import com.jfixby.cmns.api.base64.Base64;
@@ -123,7 +122,7 @@ public class SummerAssembler implements FokkerEngineAssembler {
 		MathTools.installComponent(new RedMathTools());
 		// --
 		UnitsSpawner.installComponent(new RedUnitSpawner());
-		Json.installComponent(new RedJson());
+		Json.installComponent("com.jfixby.cmns.adopted.gdx.json.RedJson");
 		Base64.installComponent(new GdxBase64());
 		MD5.installComponent(new RSADataSecurityIncMD5());
 
