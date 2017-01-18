@@ -33,6 +33,7 @@ import com.jfixby.rana.api.pkg.ResourcesManager;
 import com.jfixby.red.engine.core.resources.RedAssetsManager;
 import com.jfixby.red.engine.scene2d.RedScene2D;
 import com.jfixby.red.triplane.resources.fsbased.RedResourcesManager;
+import com.jfixby.red.triplane.resources.fsbased.RedResourcesManagerSpecs;
 import com.jfixby.scarabei.adopted.gdx.GdxSimpleTriangulator;
 import com.jfixby.scarabei.adopted.gdx.base64.GdxBase64;
 import com.jfixby.scarabei.api.angles.Angles;
@@ -223,7 +224,8 @@ public class SummerAssembler implements FokkerEngineAssembler {
 	private void installResources () throws IOException {
 		this.printAssetsInfo();
 
-		final RedResourcesManager res_manager = new RedResourcesManager();
+		final RedResourcesManagerSpecs specs = new RedResourcesManagerSpecs();
+		final RedResourcesManager res_manager = new RedResourcesManager(specs);
 		ResourcesManager.installComponent(res_manager);
 
 		final File dev_assets_home = LocalFileSystem.newFile(DoorPath.PACKED_ASSETS_HOME);
