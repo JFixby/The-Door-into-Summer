@@ -8,10 +8,9 @@ import com.badlogic.gdx.files.FileHandle;
 import com.jfixby.r3.api.EngineParams.Assets;
 import com.jfixby.r3.api.EngineParams.Settings;
 import com.jfixby.r3.api.RedTriplane;
-import com.jfixby.r3.api.logic.BusinessLogic;
 import com.jfixby.r3.api.shader.R3Shader;
 import com.jfixby.r3.api.ui.UI;
-import com.jfixby.r3.api.ui.UIStarter;
+import com.jfixby.r3.api.ui.FokkerUIManager;
 import com.jfixby.r3.api.ui.unit.layer.LayerUtils;
 import com.jfixby.r3.collide.RedCollisionsAlgebra;
 import com.jfixby.r3.engine.core.Fokker;
@@ -94,9 +93,9 @@ public class SummerAssembler implements FokkerEngineAssembler {
 		}
 
 		final RedUIManager tinto_ui_starter = new RedUIManager();
-		UIStarter.installComponent(tinto_ui_starter);
+		FokkerUIManager.installComponent(tinto_ui_starter);
 		UI.installComponent(tinto_ui_starter);
-		BusinessLogic.installComponent(new SummerTheGame());
+		RedTriplane.setGameStarter(new SummerTheGame());
 
 		// JBox2D box2d_j = new JBox2D(); //
 		// JBox2DFloat box2d_j_float = new JBox2DFloat();
