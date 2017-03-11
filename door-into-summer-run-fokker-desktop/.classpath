@@ -23,6 +23,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/door-into-summer-assets-cfg"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/gdx"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/gdx-backend-lwjgl"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-ui-api"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
